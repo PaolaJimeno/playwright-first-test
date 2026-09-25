@@ -4,7 +4,7 @@ test('user can log in and see dashboard', async ({ page }) => {
 
     const logs = [];
 
-    await page.goto('https://www.saucedemo.com.test'/*, { waitUntil: 'domcontentloaded' }*/);
+    await page.goto('https://www.saucedemo.com'/*, { waitUntil: 'domcontentloaded' }*/);
     await expect(page.getByText('Login')).toBeVisible();
     //await page.getByTestId('login-button').click();
     await expect(page.getByRole('button', { name: 'Login' })).toHaveText('Login');
