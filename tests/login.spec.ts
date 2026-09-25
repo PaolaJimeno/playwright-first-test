@@ -17,6 +17,7 @@ test('user can log in and see dashboard', async ({ page }) => {
     await expect(page).toHaveURL(/inventory/);
     await expect(page.getByText('Products')).toBeVisible();
 
+    // test here
     // Intercept console errors
     page.on('console', msg => {
       if (msg.type() === 'error') {
