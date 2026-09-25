@@ -4,7 +4,7 @@ test('user can log in and see dashboard', async ({ page }) => {
 
     const logs = [];
 
-    await page.goto('https://www.saucedemo.com'/*, { waitUntil: 'domcontentloaded' }*/);
+    await page.goto('https://www.saucedemo.com.test'/*, { waitUntil: 'domcontentloaded' }*/);
     await expect(page.getByText('Login')).toBeVisible();
     //await page.getByTestId('login-button').click();
     await expect(page.getByRole('button', { name: 'Login' })).toHaveText('Login');
@@ -17,7 +17,7 @@ test('user can log in and see dashboard', async ({ page }) => {
     await expect(page).toHaveURL(/inventory/);
     await expect(page.getByText('Products')).toBeVisible();
 
-    // test here
+    
     // Intercept console errors
     page.on('console', msg => {
       if (msg.type() === 'error') {
