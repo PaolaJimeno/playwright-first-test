@@ -19,10 +19,6 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Build Playwright Docker image
-        run: docker build -t playwright-tests
-    - name: Run Playwright tests inside Docker
-        run: docker run --rm playwright-tests
     - name: Run Playwright tests
       run: npx playwright test --reporter=html
     - name: Upload Playwright Report
